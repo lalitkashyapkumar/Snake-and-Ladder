@@ -58,33 +58,7 @@ public class Main {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				prePosSys += player.createCb(cb, prePosSys);
-				scene.setPval(dice);
-				xyPos(prePosSys);
-				sys.setX(x+10);
-				sys.setY(y+10);
-//				System.out.print(prePosPlay+" ");
-				prePosPlay += player.createCb(cb, prePosPlay);
-				
-				scene.setSval(dice);
-				xyPos(prePosPlay);
-				System.out.println(prePosPlay +" "+x+" "+y);
-				button.setX(x+10);
-				button.setY(y+10);
-				
-				scene.repaint();
-				button.repaint();
-				if(prePosPlay == 100) {
-					JOptionPane.showMessageDialog(scene, "you win");
-					prePosSys = 0;
-					prePosPlay = 0;
-				}
-				sys.repaint();
-				if(prePosSys == 100) {
-					JOptionPane.showMessageDialog(scene, "Computer win");
-					prePosSys = 0;
-					prePosPlay = 0;
-				}
+				playGame(cb);
 			}
 			
 		});
@@ -92,33 +66,7 @@ public class Main {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				prePosSys += player.createCb(cb, prePosSys);
-				scene.setPval(dice);
-				xyPos(prePosSys);
-				sys.setX(x+10);
-				sys.setY(y+10);
-//				System.out.print(prePosPlay+" ");
-				prePosPlay += player.createCb(cb, prePosPlay);
-				
-				scene.setSval(dice);
-				xyPos(prePosPlay);
-				System.out.println(prePosPlay +" "+x+" "+y);
-				button.setX(x+10);
-				button.setY(y+10);
-				
-				scene.repaint();
-				button.repaint();
-				if(prePosPlay == 100) {
-					JOptionPane.showMessageDialog(scene, "you win");
-					prePosSys = 0;
-					prePosPlay = 0;
-				}
-				sys.repaint();
-				if(prePosSys == 100) {
-					JOptionPane.showMessageDialog(scene, "Computer win");
-					prePosSys = 0;
-					prePosPlay = 0;
-				}
+				playGame(cb);
 			}
 			
 		});
@@ -126,8 +74,34 @@ public class Main {
 		mainframe.setContentPane(scene);
 		mainframe.setVisible(true);
 	}
-	static void playGame() {
+	static void playGame(int []cb) {
+		prePosSys += player.createCb(cb, prePosSys);
+		scene.setPval(dice);
+		xyPos(prePosSys);
+		sys.setX(x+10);
+		sys.setY(y+10);
+//		System.out.print(prePosPlay+" ");
+		prePosPlay += player.createCb(cb, prePosPlay);
 		
+		scene.setSval(dice);
+		xyPos(prePosPlay);
+		System.out.println(prePosPlay +" "+x+" "+y);
+		button.setX(x+10);
+		button.setY(y+10);
+		
+		scene.repaint();
+		button.repaint();
+		if(prePosPlay == 100) {
+			JOptionPane.showMessageDialog(scene, "you win");
+			prePosSys = 0;
+			prePosPlay = 0;
+		}
+		sys.repaint();
+		if(prePosSys == 100) {
+			JOptionPane.showMessageDialog(scene, "Computer win");
+			prePosSys = 0;
+			prePosPlay = 0;
+		}
 	}
 	static void xyPos(int pos){
 		if(pos==0) {
