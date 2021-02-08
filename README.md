@@ -5,7 +5,7 @@ For the GUI I had used "awt and swing" library of java.
 ![gui](https://github.com/lalitkashyapkumar/Snake-and-Ladder/blob/master/src/images/image1.png)
 
 ## Working
-In the src folder, there is basically 4 modules available Main.java, Scene.java, Playbutton.java.java, and Play.java
+In the src folder, there is basically 4 modules available Main.java, Scene.java, Playbutton.java, and Play.java
 ### Main.java
     As the name suggests it contains your main class and calls the scene and other class to create
     the GUI and enable the game application to work and it also contains the function for moving the 
